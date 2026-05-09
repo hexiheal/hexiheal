@@ -890,11 +890,7 @@ h1, h2, h3, h4, h5, .navbar-brand {
     text-align: center;
   }
   
-  .nav-cta {
-    display: inline-block;
-    width: auto;
-    margin: 0.5rem auto;
-  }
+
   
   /* Hero Section */
   .hero-section {
@@ -1288,3 +1284,14 @@ h1, h2, h3, h4, h5, .navbar-brand {
   font-weight: 500;
   color: rgba(255,255,255,0.9);
 }
+
+
+  .nav-cta {
+    display: inline-block;
+    width: auto;
+    margin-left: 10px;
+    color: #e0e0e0 !important;
+    background-color: #1e3b24;
+    border: none;
+    outline: none;
+  }
