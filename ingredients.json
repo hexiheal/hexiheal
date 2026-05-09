@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Nirgundi",
+    "image": "assets/images/nirghnudhi.avif",
+    "description": "Powerful herb for joint pain and inflammation relief.",
+    "benefit": "Joint Pain Relief"
+  },
+  {
+    "id": 2,
+    "name": "Ashwagandha",
+    "image": "assets/images/ashwagandha.jpeg",
+    "description": "Reduces stress-related muscle tension and pain.",
+    "benefit": "Stress Relief"
+  },
+  {
+    "id": 3,
+    "name": "Hadjod",
+    "image": "assets/images/Hadjod.jpg",
+    "description": "Supports bone healing and strengthens joints.",
+    "benefit": "Bone Strength"
+  },
+  {
+    "id": 4,
+    "name": "Ratanjot",
+    "image": "assets/images/ratanjot.jpg",
+    "description": "Traditional herb used for healing and skin benefits.",
+    "benefit": "Healing Support"
+  },
+  {
+    "id": 5,
+    "name": "Akarkara",
+    "image": "assets/images/akarkara.webp",
+    "description": "Stimulating herb used for nerve and pain relief.",
+    "benefit": "Nerve Stimulation"
+  },
+  {
+    "id": 6,
+    "name": "Guggulu",
+    "image": "assets/images/guggulu.jpg",
+    "description": "Detoxifies joints and reduces inflammation.",
+    "benefit": "Joint Detox"
+  },
+  {
+    "id": 7,
+    "name": "Shallaki",
+    "image": "assets/images/shallaki.jpg",
+    "description": "Supports cartilage health and mobility.",
+    "benefit": "Cartilage Support"
+  },
+  {
+    "id": 8,
+    "name": "Mahanarayan Oil",
+    "image": "assets/images/mahanarayan.jpg",
+    "description": "Classic Ayurvedic oil for muscle recovery.",
+    "benefit": "Muscle Recovery"
+  }
+]
