@@ -49,7 +49,7 @@ const ingredientsData = [
     id: 2,
     name: "Sesame Oil",
     image: "seasame-oil.webp",
-    description: "Traditional Ayurvedic oil for joint and muscle support.",
+    description: "Traditional herbal oil for joint and muscle support.",
     benefit: "Joint Support"
   },
   {
@@ -102,7 +102,7 @@ const ingredientsData = [
     id: 17,
     name: "Boswellia (Salai Guggul)",
     image: "Boswellia_Serrata.jpg",
-    description: "Strong Ayurvedic anti-inflammatory resin.",
+    description: "Strong herbal anti-inflammatory resin.",
     benefit: "Joint Care"
   },
   {
@@ -194,7 +194,7 @@ const ingredientsData = [
     id: 31,
     name: "And Much More...",
     image: "much more.webp",
-    description: "A powerful blend of additional secret Ayurvedic herbs and natural oils for enhanced pain relief.",
+    description: "A powerful blend of additional secret herbal herbs and natural oils for enhanced pain relief.",
     benefit: "Proprietary Blend"
   }
 ];
