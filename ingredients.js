@@ -15,13 +15,7 @@ const ingredientsData = [
     description: "Reduces stress-related muscle tension and pain.",
     benefit: "Stress Relief"
   },
-  {
-    id: 7,
-    name: "Hadjod",
-    image: "Hadjod.jpg",
-    description: "Supports bone healing and strengthens joints.",
-    benefit: "Bone Strength"
-  },
+
   {
     id: 8,
     name: "Ratanjot",
@@ -90,13 +84,6 @@ const ingredientsData = [
     image: "turmeric.jpg",
     description: "Reduces inflammation and joint pain.",
     benefit: "Anti-inflammatory"
-  },
-  {
-    id: 16,
-    name: "Ginger Extract",
-    image: "ginger.jpg",
-    description: "Improves blood flow and reduces swelling.",
-    benefit: "Circulation Boost"
   },
   {
     id: 17,
