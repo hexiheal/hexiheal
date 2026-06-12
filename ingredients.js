@@ -15,7 +15,6 @@ const ingredientsData = [
     description: "Reduces stress-related muscle tension and pain.",
     benefit: "Stress Relief"
   },
-
   {
     id: 8,
     name: "Ratanjot",
@@ -174,6 +173,14 @@ const ingredientsData = [
     image: "ajwain oil.webp",
     description: "Traditional oil for muscle and gas pain relief.",
     benefit: "Muscle Relief"
+  },
+
+  {
+    id: 32,
+    name: "Saffron",
+    image: "saffron.jpg",
+    description: "High-value botanical used for radiant skin, deep healing, and natural anti-inflammatory support.",
+    benefit: "inflammation balance."
   },
 
   // Final Card
