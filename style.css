@@ -31,10 +31,10 @@ h1, h2, h3, h4, h5, .navbar-brand {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  display: none;
 }
 
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
   background: var(--cream-bg);
 }
 
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, .navbar-brand {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--dark-green);
-}
+} */
 
 /* Navbar */
 .navbar {
@@ -294,100 +294,275 @@ h1, h2, h3, h4, h5, .navbar-brand {
   background: var(--cream-bg);
 }
 
-/* Pain Cards */
-.pain-card {
-  background: white;
+/* ============================================
+   CARDS WITH BACKGROUND IMAGES 
+   (Pain, Feature, Benefit Sections)
+   ============================================ */
+
+/* --- Base Styles for all cards --- */
+.pain-card,
+.feature-card,
+.benefit-card {
+  position: relative;
+  overflow: hidden;
   padding: 2rem;
   text-align: center;
   border-radius: 20px;
-  box-shadow: var(--shadow-sm);
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   transition: var(--transition-smooth);
-  height: 100%;
+  box-shadow: var(--shadow-sm);
+  border: none;
+  color: #ffffff;
+  z-index: 1;
 }
 
-.pain-card:hover {
-  transform: translateY(-10px);
+/* --- Dark Overlay (for text readability) --- */
+.pain-card::before,
+.feature-card::before,
+.benefit-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 20px;
+  z-index: -1;
+  transition: var(--transition-smooth);
+}
+
+/* --- Hover Overlay Lightening & Zoom Effect --- */
+.pain-card:hover::before,
+.feature-card:hover::before,
+.benefit-card:hover::before {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.pain-card:hover,
+.feature-card:hover,
+.benefit-card:hover {
+  transform: translateY(-8px) scale(1.02);
   box-shadow: var(--shadow-hover);
 }
 
-.pain-card i {
+/* --- Content Positioning (above overlay) --- */
+.pain-card *,
+.feature-card *,
+.benefit-card * {
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Icon Styling (Golden for premium look) --- */
+.pain-card i,
+.feature-card i,
+.benefit-card i {
   font-size: 3rem;
-  color: var(--olive-green);
+  color: #ffe082;
   margin-bottom: 1rem;
   transition: var(--transition-smooth);
 }
 
-.pain-card:hover i {
+.pain-card:hover i,
+.feature-card:hover i,
+.benefit-card:hover i {
   transform: scale(1.1);
 }
 
-.pain-card h4 {
+/* --- Text Colors --- */
+.pain-card h4,
+.feature-card h4,
+.benefit-card h4 {
   font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
-.pain-card p {
-  color: #666;
+.pain-card p,
+.feature-card p,
+.benefit-card p {
+  color: rgba(255, 255, 255, 0.9);
   margin: 0;
+  font-size: 0.95rem;
 }
 
-.solution-box {
-  background: linear-gradient(135deg, var(--dark-green), var(--olive-green));
-  color: white;
-  padding: 2rem;
-  border-radius: 30px;
-  margin-top: 2rem;
-  transition: var(--transition-smooth);
+/* ============================================
+   PAIN CARDS (4)
+   ============================================ */
+
+.row .col-md-3:nth-child(1) .pain-card{
+  background-image:url('joints-pain.png');
 }
 
-.solution-box:hover {
-  transform: scale(1.02);
-  box-shadow: var(--shadow-hover);
+.row .col-md-3:nth-child(2) .pain-card{
+  background-image:url('fatigue.png');
 }
 
-.solution-box i {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  animation: bounce 2s infinite;
+.row .col-md-3:nth-child(3) .pain-card{
+  background-image:url('mucles-stiffness.png');
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
+.row .col-md-3:nth-child(4) .pain-card{
+  background-image:url('stress-pain.png');
 }
 
-/* Feature Cards */
-.feature-card, .benefit-card {
-  background: white;
-  padding: 2rem;
-  text-align: center;
-  border-radius: 20px;
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition-smooth);
-  height: 100%;
+/* ============================================
+   FEATURE CARDS (6)
+   ============================================ */
+
+.why-choose .col-md-4:nth-child(1) .feature-card{
+  background-image:url('herbal-formula.png');
 }
 
-.feature-card:hover, .benefit-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
+.why-choose .col-md-4:nth-child(2) .feature-card{
+  background-image:url('traditional-ingrdients.png');
 }
 
-.feature-card i, .benefit-card i {
-  font-size: 2.5rem;
-  color: var(--olive-green);
-  margin-bottom: 1rem;
-  transition: var(--transition-smooth);
+.why-choose .col-md-4:nth-child(3) .feature-card{
+  background-image:url('deep-relief.png');
 }
 
-.feature-card:hover i, .benefit-card:hover i {
-  transform: scale(1.1);
+.why-choose .col-md-4:nth-child(4) .feature-card{
+  background-image:url('no-harsh-chemicals.png');
 }
 
-.feature-card h4, .benefit-card h4 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+.why-choose .col-md-4:nth-child(5) .feature-card{
+  background-image:url('relaxation-support.png');
 }
 
+.why-choose .col-md-4:nth-child(6) .feature-card{
+  background-image:url('lab-tested.jpeg');
+}
+
+/* ============================================
+   BENEFIT CARDS (5)
+   ============================================ */
+
+.benefits .col-md-4:nth-child(1) .benefit-card{
+  background-image:url('deep-relief.png');
+}
+
+.benefits .col-md-4:nth-child(2) .benefit-card{
+  background-image:url('mucles-stiffness.png');
+}
+
+.benefits .col-md-4:nth-child(3) .benefit-card{
+  background-image:url('better-circulation.webp');
+}
+
+.benefits .col-md-4:nth-child(4) .benefit-card{
+  background-image:url('joints-support.avif');
+}
+
+.benefits .col-md-4:nth-child(5) .benefit-card{
+  background-image:url('stress-relief.jpg');
+}
+.benefits .col-md-4:nth-child(6) .benefit-card{
+  background-image:url('natural-recovery.jpg');
+}
+
+/* ============================================
+   COMMON CARD STYLING
+   ============================================ */
+
+.pain-card,
+.feature-card,
+.benefit-card{
+  position:relative;
+  overflow:hidden;
+
+  min-height:250px;
+  border-radius:20px;
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+  color:#fff;
+  padding:2rem;
+}
+
+/* Dark Overlay */
+
+.pain-card::before,
+.feature-card::before,
+.benefit-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+}
+
+/* Keep Content Above Overlay */
+
+.pain-card *,
+.feature-card *,
+.benefit-card *{
+  position:relative;
+  z-index:2;
+}
+
+/* Icons */
+
+.pain-card i,
+.feature-card i,
+.benefit-card i{
+  font-size:2.5rem;
+  margin-bottom:15px;
+}
+
+/* Hover Effect */
+
+.pain-card:hover,
+.feature-card:hover,
+.benefit-card:hover{
+  transform:translateY(-8px);
+  transition:0.3s ease;
+}
+
+/* ============================================
+   MOBILE
+   ============================================ */
+
+@media (max-width:575px){
+
+  .pain-card,
+  .feature-card,
+  .benefit-card{
+    min-height:180px;
+    padding:1.2rem;
+  }
+
+  .pain-card i,
+  .feature-card i,
+  .benefit-card i{
+    font-size:2rem;
+  }
+
+  .pain-card h4,
+  .feature-card h4,
+  .benefit-card h4{
+    font-size:1.1rem;
+  }
+
+  .pain-card p,
+  .feature-card p,
+  .benefit-card p{
+    font-size:0.85rem;
+  }
+}
 /* Testimonial Cards */
 .testimonial-card {
   background: white;
@@ -641,27 +816,87 @@ h1, h2, h3, h4, h5, .navbar-brand {
   font-size: 1.2rem;
   opacity: 0.9;
 }
+/* =========================
+   Mission Section
+========================= */
 
-/* Mission Cards */
-.mission-card {
-  background: white;
-  padding: 2rem;
-  text-align: center;
-  border-radius: 20px;
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition-smooth);
-  height: 100%;
+.mission-section {
+  background: #f8f5ef;
 }
 
+/* CARD BASE */
+.mission-card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.4s ease;
+  color: #fff;
+}
+
+/* DARK OVERLAY */
+.mission-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  transition: 0.4s ease;
+}
+
+/* CONTENT ABOVE OVERLAY */
+.mission-card * {
+  position: relative;
+  z-index: 1;
+}
+
+/* HOVER EFFECT */
 .mission-card:hover {
   transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
 }
 
+.mission-card:hover::before {
+  background: rgba(0,0,0,0.65);
+}
+
+/* ICON */
 .mission-card i {
   font-size: 3rem;
-  color: var(--olive-green);
   margin-bottom: 1rem;
+  color: #d4af37; /* golden accent */
+}
+
+/* TEXT */
+.mission-card h4 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+.mission-card p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* =========================
+   BACKGROUND IMAGES
+========================= */
+
+.card-1 {
+  background-image: url("pure-potent.png");
+}
+
+.card-2 {
+  background-image: url("sustainable-healing.webp");
+}
+
+.card-3 {
+  background-image: url("evidence-based.jpg");
 }
 
 .trust-list {
@@ -688,12 +923,12 @@ h1, h2, h3, h4, h5, .navbar-brand {
   position: relative;
   z-index: 5;
   filter: drop-shadow(0 25px 40px rgba(0,0,0,0.25));
-  transition: var(--transition-smooth);
-  transform: rotate(10deg) scale(1.2);
+  transition: all .5s ease !important;
+  transform: scale(1.5);
 }
 
 .hero-product:hover {
-transform: rotate(10deg) scale(1.3);
+  transform:scale(1.6);
 }
 
 .hero-img-wrapper {
@@ -970,14 +1205,6 @@ transform: rotate(10deg) scale(1.3);
     font-size: 1.8rem;
   }
   
-  .solution-box {
-    padding: 1.5rem;
-    margin-top: 1.5rem;
-  }
-  
-  .solution-box h3 {
-    font-size: 1.3rem;
-  }
   
   /* Testimonials */
   .testimonial-card p {
@@ -1030,6 +1257,7 @@ transform: rotate(10deg) scale(1.3);
   .footer p, .footer-links li {
     font-size: 0.85rem;
   }
+  
   
   .social-links {
     margin-top: 1rem;
@@ -1407,4 +1635,91 @@ transform: rotate(10deg) scale(1.3);
   .policy-section-block h5 {
     font-size: 0.95rem;
   }
+}
+
+
+.footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+
+.solution-box {
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  text-align: center;
+
+  /* HERO STYLE GREEN GRADIENT */
+  background: linear-gradient(180deg, #2f5a33, #1e3b24);
+
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  color: #fff;
+
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* soft glow overlay like hero */
+.solution-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(146, 184, 90, 0.25),
+    transparent 60%
+  );
+  opacity: 0.7;
+}
+
+/* content above overlay */
+.solution-box * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ICON (hero style accent) */
+.solution-box i {
+  font-size: 2.8rem;
+  color: #92b85a;
+  margin-bottom: 1rem;
+  display: inline-block;
+  animation: floatArrow 1.8s infinite ease-in-out;
+}
+
+/* TITLE */
+.solution-box h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+}
+
+/* TEXT */
+.solution-box p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.85);
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* hover like hero button feel */
+.solution-box:hover {
+  transform: translateY(-6px);
+  transition: 0.3s ease;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+}
+
+/* animation */
+@keyframes floatArrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
 }
