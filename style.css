@@ -15,6 +15,14 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
+[data-aos] {
+  overflow-x: hidden;
+}
 body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--white);
